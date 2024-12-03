@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            top: 0;
+        }
+
+        header nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .hero {
+            justify-content: space;
+            align-items: center;
+            padding: 100px 20px;
+            margin-top: 70px;
+        }
+
+        .hero img {
+            max-width: 40%;
+        }
+
+        .products-section {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #f9f9f9;
+        }
+
+        .products-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .product-card {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            width: 200px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .product-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .product-card p {
+            margin: 20px 0 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="img/logo.png" alt="Logo Tennis" style="height: 40px;">
+        <nav>
+            <a href="/">Home</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="cadastroRelatorio.html">Relatório</a>
+            <a href="admin.html">Admin</a>
+            <a href="carrinho.html"><img src="img/carrinho.jpg" alt="Carrinho" style="height: 24px; width: 24px;"></a>
+            <a href="cadastro.html"><img src="img/perfil.png" alt="Perfil" style="height: 24px; width: 24px;"></a>
+        </nav>
+    </header>
+<body>
+<section id="hero" class="hero">
+    <br>
+    <div class="products-container">
+        <h1>Cadastrar Relatório</h1>
+        <br>
+        <ul>
+            <form action="/relatorio/cadastro" method="POST">
+                <label for="nome">Nome do Relatório:</label>
+                <input type="text" id="nome" name="nome" required>
+                <br><br>
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao" name="descricao" required></textarea>
+                <br><br>
+                <button type="submit">Cadastrar</button>
+            </form>
+            <a href="lista.html">Ver Lista de Relatórios</a>
+            </a>
+        </ul>
+    </div>
+</section>
+
+
+
+</body>
+</html>

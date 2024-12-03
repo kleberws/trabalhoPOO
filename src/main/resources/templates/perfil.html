@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Completo - Tennis</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f3f3;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        header img {
+            height: 40px;
+        }
+
+        header nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+            max-width: 1000px;
+            margin-top: 100px;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .image-section {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f9f9f9;
+        }
+
+        .image-section img {
+            width: 80%;
+            height: auto;
+        }
+
+        .details-section {
+            width: 50%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .details-section h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .details-section p {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <img src="img/logo.png" alt="Logo Tennis">
+        <nav>
+            <a href="/">Home</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="cadastroRelatorio.html">Relatório</a>
+            <a href="admin.html">Admin</a>
+            <a href="carrinho.html"><img src="img/carrinho.jpg" alt="Carrinho" style="height: 24px; width: 24px;"></a>
+            <a href="cadastro.html"><img src="img/perfil.png" alt="Perfil" style="height: 24px; width: 24px;"></a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo -->
+    <div class="container">
+        <div class="image-section">
+            <img src="img/tenisdiagonal.png" alt="Tênis">
+        </div>
+        <div class="details-section">
+            <h1>Perfil Cadastrado</h1>
+            <p><strong>Nome:</strong> <span id="nome"></span></p>
+            <p><strong>Sobrenome:</strong> <span id="sobrenome"></span></p>
+            <p><strong>Email:</strong> <span id="email"></span></p>
+            <p><strong>Data de Nascimento:</strong> <span id="dataNascimento"></span></p>
+            <p><strong>Gênero:</strong> <span id="genero"></span></p>
+            <p><strong>Endereço:</strong> <span id="endereco"></span></p>
+        </div>
+    </div>
+
+    <script>
+        // Captura os parâmetros da URL
+        const params = new URLSearchParams(window.location.search);
+
+        // Insere os valores no HTML
+        document.getElementById('nome').textContent = params.get('nome');
+        document.getElementById('sobrenome').textContent = params.get('sobrenome');
+        document.getElementById('email').textContent = params.get('email');
+        document.getElementById('dataNascimento').textContent = params.get('data_nascimento');
+        document.getElementById('genero').textContent = params.get('genero');
+        document.getElementById('endereco').textContent = params.get('endereco');
+    </script>
+</body>
+</html>

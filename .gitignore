@@ -1,0 +1,33 @@
+# Maven/Gradle
+target/
+build/
+
+# Configurações do IntelliJ/IDEA
+.idea/
+*.iml
+
+# Configurações do Eclipse
+.project
+.classpath
+.settings/
+
+# Logs
+*.log
+logs/
+
+# Sistema Operacional
+.DS_Store
+Thumbs.db
+# IDEs
+.idea/
+.vscode/
+
+# Banco de dados
+*.sql
+
+# Arquivos temporários
+*.log
+
+# Outros
+HELP.md
+

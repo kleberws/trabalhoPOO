@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - Tennis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #fff;
+            padding: 20px 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        header img {
+            height: 40px;
+        }
+        header nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .products-section {
+            padding: 50px 20px;
+            background-color: #f9f9f9;
+        }
+        .products-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .product-card {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            width: 250px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+        .product-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="img/logo.png" alt="Logo Tennis">
+        <nav>
+            <a href="/">Home</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="cadastroRelatorio.html">Relatório</a>
+            <a href="admin.html">Admin</a>
+            <a href="carrinho.html"><img src="img/carrinho.jpg" alt="Carrinho" style="height: 24px; width: 24px;"></a>
+            <a href="cadastro.html"><img src="img/perfil.png" alt="Perfil" style="height: 24px; width: 24px;"></a>
+        </nav>
+    </header>
+
+    <section class="products-section">
+        <h2>Todos os Produtos</h2>
+        <div class="products-container">
+            <div th:each="produto : ${produtos}" class="product-card">
+                <img th:src="@{${produto.imagemUrl}}" alt="Produto">
+                <p th:text="${produto.nome}"></p>
+                <p th:text="${produto.preco}"></p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

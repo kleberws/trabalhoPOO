@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            top: 0;
+        }
+
+        header nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .content {
+            padding: 100px 20px;
+        }
+
+        .admin-panel {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        [contenteditable="true"] {
+            border: 1px dashed #007bff;
+            outline: none;
+        }
+
+        button {
+            padding: 5px 10px;
+            margin: 2px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .button.is-warning {
+            background-color: #ffc107;
+            color: white;
+        }
+
+        .button.is-success {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="img/logo.png" alt="Logo Tennis" style="height: 40px;">
+        <nav>
+            <a href="/">Home</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="cadastroRelatorio.html">Relatório</a>
+            <a href="admin.html">Admin</a>
+            <a href="carrinho.html"><img src="img/carrinho.jpg" alt="Carrinho" style="height: 24px; width: 24px;"></a>
+            <a href="cadastro.html"><img src="img/perfil.png" alt="Perfil" style="height: 24px; width: 24px;"></a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h1 class="title">Painel de Administração</h1>
+        <div class="admin-panel">
+            <h2>Gerenciamento</h2>
+            <p>Adicione, edite ou remova produtos.</p>
+            <table id="product-table">
+                <thead>
+                    <tr>
+                        <th>Modelo</th>
+                        <th>Cor</th>
+                        <th>Preço</th>
+                        <th>Imagem</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td contenteditable="false">Modelo 1</td>
+                        <td contenteditable="false">Preto</td>
+                        <td contenteditable="false">R$ 199,99</td>
+                        <td><img src="img/tenis1.jpg" alt="Modelo 1" style="width: 50px;"></td>
+                        <td>
+                            <button class="button is-warning" onclick="habilitarEdicao(this)">Alterar</button>
+                            <button class="button is-success save-button" style="display: none;" onclick="salvarEdicao(this)">Salvar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="button is-success add-button" onclick="adicionarProduto()">Adicionar Produto</button>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
