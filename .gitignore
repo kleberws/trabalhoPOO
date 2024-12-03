@@ -22,9 +22,6 @@ Thumbs.db
 .idea/
 .vscode/
 
-# Banco de dados
-*.sql
-
 # Arquivos temporários
 *.log
 
