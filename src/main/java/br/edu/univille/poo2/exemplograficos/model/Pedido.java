@@ -5,7 +5,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Column;
-import java.time.LocalDate;  // Usando LocalDate para melhor manipulação de datas
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import java.time.LocalDate;
 
 @Entity
 public class Pedido {
@@ -14,12 +16,12 @@ public class Pedido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Alterando para LocalDate, que é o tipo recomendado para datas
     @Column(nullable = true)
     private LocalDate dataPedido;
 
+    @Enumerated(EnumType.STRING)  // Usando EnumType.STRING para salvar o nome do status no banco
     @Column(nullable = true, length = 50)
-    private String status;
+    private Status status;  // Tipo Enum para status
 
     // Getters and Setters
     public Long getId() { 
@@ -38,11 +40,18 @@ public class Pedido {
         this.dataPedido = dataPedido; 
     }
 
-    public String getStatus() { 
+    public Status getStatus() { 
         return status; 
     }
 
-    public void setStatus(String status) { 
+    public void setStatus(Status status) { 
         this.status = status; 
+    }
+
+    // Enum para status do pedido
+    public enum Status {
+        PENDENTE, 
+        FINALIZADO, 
+        CANCELADO
     }
 }

@@ -8,19 +8,19 @@ public class AdminController {
 
     // Página de administração (admin.html)
     @GetMapping("/admin")
-    public String admin() {
+    public String showAdminPage() {
         return "admin"; // admin.html
     }
 
-    // Página de cadastro (cadastroRelatorio.html)
-    @GetMapping("/cadastro")
-    public String cadastro() {
+    // Página de cadastro de relatórios (cadastroRelatorio.html)
+    @GetMapping("/cadastroRelatorio")
+    public String showCadastroRelatorioPage() {
         return "cadastroRelatorio"; // cadastroRelatorio.html
     }
 
     // Página de perfil (perfil.html)
     @GetMapping("/perfil")
-    public String perfil() {
+    public String showPerfilPage() {
         return "perfil"; // perfil.html
     }
 }

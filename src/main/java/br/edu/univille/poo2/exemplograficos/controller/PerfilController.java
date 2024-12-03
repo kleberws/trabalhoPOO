@@ -8,7 +8,7 @@ public class PerfilController {
 
     // Página de perfil do usuário
     @GetMapping("/meuPerfil")
-    public String meuPerfil() {
+    public String showMeuPerfilPage() {
         return "meuPerfil"; // meuPerfil.html
     }
 }

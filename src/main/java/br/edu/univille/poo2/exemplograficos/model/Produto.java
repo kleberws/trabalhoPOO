@@ -5,25 +5,24 @@ import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
-/**
- * Classe Produto representando os produtos do sistema.
- */
+import java.math.BigDecimal;  // Usando BigDecimal para precisão de valores monetários
+
 @Entity
 public class Produto {
 
-    // Definindo o ID da entidade e a estratégia de geração de chave primária
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)  // Geração automática do ID pelo banco de dados
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nome;
-    private double preco;
+    
+    private BigDecimal preco;  // Usando BigDecimal em vez de double para maior precisão
 
     // Construtor padrão
     public Produto() {}
 
     // Construtor com parâmetros
-    public Produto(String nome, double preco) {
+    public Produto(String nome, BigDecimal preco) {
         this.nome = nome;
         this.preco = preco;
     }
@@ -46,15 +45,14 @@ public class Produto {
         this.nome = nome;
     }
 
-    public double getPreco() {
+    public BigDecimal getPreco() {
         return preco;
     }
 
-    public void setPreco(double preco) {
+    public void setPreco(BigDecimal preco) {
         this.preco = preco;
     }
 
-    // Método toString (opcional) para exibição dos dados do produto
     @Override
     public String toString() {
         return "Produto{id=" + id + ", nome='" + nome + "', preco=" + preco + "}";

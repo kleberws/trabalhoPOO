@@ -8,7 +8,7 @@ public class ProdutoAdminController {
 
     // Página de administração de produtos
     @GetMapping("/admin/produtos")
-    public String produtosAdmin() {
+    public String showProdutosAdminPage() {
         return "produtosAdmin"; // produtosAdmin.html
     }
 }

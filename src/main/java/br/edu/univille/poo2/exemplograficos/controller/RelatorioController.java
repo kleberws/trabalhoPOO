@@ -8,7 +8,8 @@ public class RelatorioController {
 
     // Página de relatórios gerais
     @GetMapping("/relatorios")
-    public String relatorios() {
+    public String showRelatoriosPage() {
         return "relatorios"; // relatorios.html
     }
 }
+

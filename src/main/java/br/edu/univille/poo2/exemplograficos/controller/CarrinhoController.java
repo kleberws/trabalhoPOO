@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class CarrinhoController {
 
-    // Página do carrinho de compras com novo mapeamento
+    // Página do carrinho de compras (carrinho.html)
     @GetMapping("/meuCarrinho")
-    public String carrinho() {
+    public String showCarrinhoPage() {
         return "carrinho"; // carrinho.html
     }
 }

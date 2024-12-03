@@ -6,15 +6,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ProdutoController {
 
-    // Página de listagem de produtos (produtos.html)
+    // Página de listagem de produtos
     @GetMapping("/produtos")
-    public String produtos() {
+    public String showProdutosPage() {
         return "produtos"; // produtos.html
     }
 
-    // Página de carrinho de compras (carrinho.html)
+    // Página de carrinho de compras
     @GetMapping("/carrinho")
-    public String carrinho() {
+    public String showCarrinhoPage() {
         return "carrinho"; // carrinho.html
     }
 }

@@ -6,6 +6,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Column;
 
+import java.time.LocalDate;
+
 @Entity
 public class Relatorio {
     @Id
@@ -13,9 +15,9 @@ public class Relatorio {
     private Long id;
 
     @Column(nullable = true)
-    private java.sql.Date data;
+    private LocalDate data;  // Usando LocalDate ao invés de java.sql.Date
 
-    @Column(nullable = true) // Remova precision e scale aqui
+    @Column(nullable = true)
     private Double totalVendas;
 
     @Column(length = 255, nullable = true)
@@ -31,8 +33,8 @@ public class Relatorio {
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
-    public java.sql.Date getData() { return data; }
-    public void setData(java.sql.Date data) { this.data = data; }
+    public LocalDate getData() { return data; }
+    public void setData(LocalDate data) { this.data = data; }
 
     public Double getTotalVendas() { return totalVendas; }
     public void setTotalVendas(Double totalVendas) { this.totalVendas = totalVendas; }

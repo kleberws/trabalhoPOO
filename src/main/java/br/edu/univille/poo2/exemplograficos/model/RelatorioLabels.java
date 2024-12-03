@@ -13,7 +13,7 @@ public class RelatorioLabels {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; // Identificador único da entidade
 
-    @Column(nullable = true, length = 255) // Adicionando coluna com limite de 255 caracteres
+    @Column(length = 255) // Limitando o tamanho da string a 255 caracteres
     private String labels; // Atributo adicional de exemplo
 
     // Construtores
