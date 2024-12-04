@@ -6,9 +6,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomeController {
 
-    // Página inicial (home.html)
-    @GetMapping("/")
+    @GetMapping("/") // Rota para a página inicial
     public String showHomePage() {
-        return "home"; // home.html
+        return "home"; // Nome do arquivo HTML na pasta templates
+    }
+
+    @GetMapping("/home") // Rota adicional
+    public String redirectToHome() {
+        return "home"; // Reaproveita o mesmo arquivo HTML
     }
 }
