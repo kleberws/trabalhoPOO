@@ -72,6 +72,10 @@
             background-color: #28a745;
             color: white;
         }
+        .button.is-danger {
+            background-color: #dc3545;
+            color: white;
+        }
         .button:hover {
             opacity: 0.8;
         }
@@ -115,6 +119,7 @@
                         <td>
                             <button class="button is-warning" onclick="habilitarEdicao(this)">Alterar</button>
                             <button class="button is-success save-button" style="display: none;" onclick="salvarEdicao(this)">Salvar</button>
+                            <button class="button is-danger" onclick="excluirProduto(this)">Excluir</button>
                         </td>
                     </tr>
                 </tbody>

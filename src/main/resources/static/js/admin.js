@@ -40,6 +40,7 @@ function adicionarProduto() {
         <td><input type="file" onchange="previewImage(this)"></td>
         <td>
             <button class="button is-success" onclick="salvarEdicao(this)">Salvar</button>
+            <button class="button is-danger" onclick="excluirProduto(this)">Excluir</button>
         </td>
     `;
     table.appendChild(newRow);
@@ -54,5 +55,14 @@ function previewImage(input) {
             input.parentElement.previousElementSibling.innerHTML = `<img src="${e.target.result}" style="width: 50px;">`;
         };
         reader.readAsDataURL(file);
+    }
+}
+
+// Função para excluir um produto
+function excluirProduto(button) {
+    const row = button.closest('tr');
+    if (confirm('Tem certeza de que deseja excluir este produto?')) {
+        row.remove();
+        alert('Produto excluído com sucesso!');
     }
 }
