@@ -49,14 +49,6 @@
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
 
-        <!-- DevTools (recarregamento automático) -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
-            <optional>true</optional>
-        </dependency>
-
         <!-- Testes -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
