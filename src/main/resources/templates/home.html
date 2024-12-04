@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -73,12 +73,12 @@
 </head>
 <body>
     <header>
-        <img src="img/logo.png" alt="Logo Tennis" >
+        <img src="img/logo.png" alt="Logo Tennis">
         <nav>
             <a href="/">Home</a>
             <a href="produtos">Produtos</a>
             <a href="sobre">Sobre</a>
-            <a href="cadastroRelatorio">Relatório</a>
+            <a href="cadastroRelatorio.html">Relatório</a>
             <a href="admin">Admin</a>
             <a href="carrinho"><img src="img/carrinho.jpg" alt="Carrinho" style="height: 24px; width: 24px;"></a>
             <a href="cadastro"><img src="img/perfil.png" alt="Perfil" style="height: 24px; width: 24px;"></a>
@@ -96,11 +96,10 @@
     <section class="products-section">
         <h2>Produtos em Destaque</h2>
         <div class="products-container">
-            <!-- Aqui os produtos serão carregados dinamicamente -->
             <div class="product-card" th:each="produto : ${produtos}">
                 <img th:src="@{${produto.imagemUrl}}" alt="Tênis">
                 <p th:text="${produto.nome}"></p>
-                <p th:text="${produto.preco}"></p>
+                <p>R$ <span th:text="${produto.preco}"></span></p>
             </div>
         </div>
     </section>

@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
     <style>
+        /* CSS embutido para estilizar a página */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
-
         header {
             background-color: #fff;
             display: flex;
@@ -23,7 +23,6 @@
             z-index: 1000;
             top: 0;
         }
-
         header nav a {
             margin: 0 10px;
             text-decoration: none;
@@ -31,11 +30,9 @@
             font-weight: bold;
             cursor: pointer;
         }
-
         .content {
             padding: 100px 20px;
         }
-
         .admin-panel {
             margin-top: 20px;
             padding: 20px;
@@ -43,28 +40,23 @@
             border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
         }
-
         th, td {
             border: 1px solid #ddd;
             padding: 10px;
             text-align: center;
         }
-
         th {
             background-color: #f4f4f4;
         }
-
         [contenteditable="true"] {
             border: 1px dashed #007bff;
             outline: none;
         }
-
         button {
             padding: 5px 10px;
             margin: 2px;
@@ -72,17 +64,14 @@
             border-radius: 4px;
             cursor: pointer;
         }
-
         .button.is-warning {
             background-color: #ffc107;
             color: white;
         }
-
         .button.is-success {
             background-color: #28a745;
             color: white;
         }
-
         .button:hover {
             opacity: 0.8;
         }
@@ -118,11 +107,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td contenteditable="false">Modelo 1</td>
-                        <td contenteditable="false">Preto</td>
-                        <td contenteditable="false">R$ 199,99</td>
-                        <td><img src="img/tenis1.jpg" alt="Modelo 1" style="width: 50px;"></td>
+                    <tr th:each="produto : ${produtos}">
+                        <td contenteditable="false" th:text="${produto.modelo}"></td>
+                        <td contenteditable="false" th:text="${produto.cor}"></td>
+                        <td contenteditable="false" th:text="'R$ ' + ${produto.preco}"></td>
+                        <td><img th:src="@{${produto.imagemUrl}}" alt="Imagem do Produto" style="width: 50px;"></td>
                         <td>
                             <button class="button is-warning" onclick="habilitarEdicao(this)">Alterar</button>
                             <button class="button is-success save-button" style="display: none;" onclick="salvarEdicao(this)">Salvar</button>
@@ -134,6 +123,6 @@
         </div>
     </div>
 
-    <script src="admin.js"></script>
+    <script src="/js/admin.js"></script>
 </body>
 </html>

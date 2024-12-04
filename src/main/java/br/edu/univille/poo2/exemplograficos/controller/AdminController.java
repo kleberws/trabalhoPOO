@@ -1,26 +1,25 @@
 package br.edu.univille.poo2.exemplograficos.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import br.edu.univille.poo2.exemplograficos.model.Produto;
+import br.edu.univille.poo2.exemplograficos.service.ProdutoService;
+import java.util.List; 
 
 @Controller
 public class AdminController {
 
-    // Página de administração (admin.html)
+    @Autowired
+    private ProdutoService produtoService;
+
     @GetMapping("/admin")
-    public String showAdminPage() {
-        return "admin"; // admin.html
+    public String showAdminPage(Model model) {
+        List<Produto> produtos = produtoService.getAllProdutos();
+        model.addAttribute("produtos", produtos);
+        return "admin"; 
     }
 
-    // Página de cadastro de relatórios (cadastroRelatorio.html)
-    @GetMapping("/cadastroRelatorio")
-    public String showCadastroRelatorioPage() {
-        return "cadastroRelatorio"; // cadastroRelatorio.html
-    }
-
-    // Página de perfil (perfil.html)
-    @GetMapping("/perfil")
-    public String showPerfilPage() {
-        return "perfil"; // perfil.html
-    }
 }
